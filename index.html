@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Você 💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#5fa8ff,#2b6cff);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+overflow-x:hidden;
+}
+
+/* container */
+
+.container{
+max-width:420px;
+width:100%;
+background:white;
+padding:35px 25px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+animation:aparecer 1s ease;
+}
+
+@keyframes aparecer{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* titulo */
+
+h1{
+color:#2b6cff;
+font-size:24px;
+margin-bottom:18px;
+}
+
+/* texto */
+
+.mensagem{
+font-size:15px;
+color:#444;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+/* fotos */
+
+.fotos{
+display:flex;
+gap:10px;
+justify-content:center;
+align-items:center;
+margin-bottom:25px;
+flex-wrap:wrap;
+}
+
+.foto{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+/* zoom normal */
+
+.foto:hover{
+transform:scale(1.07);
+}
+
+/* imagem girada */
+
+.girada{
+transform:rotate(-90deg);
+}
+
+/* zoom da imagem girada */
+
+.girada:hover{
+transform:rotate(-90deg) scale(1.07);
+}
+
+/* assinatura */
+
+.assinatura{
+font-size:14px;
+color:#555;
+margin-bottom:25px;
+}
+
+/* botão */
+
+.btn{
+display:inline-block;
+background:#2b6cff;
+color:white;
+text-decoration:none;
+padding:14px 30px;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1f55d8;
+transform:scale(1.05);
+}
+
+/* corações */
+
+.coracao{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:cair linear infinite;
+opacity:0.8;
+}
+
+@keyframes cair{
+
+to{
+transform:translateY(110vh);
+}
+
+}
+
+/* mobile */
+
+@media (max-width:420px){
+
+h1{
+font-size:20px;
+}
+
+.foto{
+width:90px;
+height:90px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Para a Mulher dos Meus Sonhos 💙</h1>
+
+<div class="mensagem">
+
+Você é a razão do meu sorriso todos os dias.<br><br>
+
+Obrigado por ser minha inspiração, minha alegria e meu porto seguro.<br><br>
+
+Cada momento ao seu lado é especial e eu quero viver muitos sonhos com você.<br><br>
+
+<b>Te amo mais do que palavras podem explicar.</b>
+
+</div>
+
+<div class="fotos">
+
+<img src="imagem1.jpeg" class="foto girada">
+<img src="imagem2.jpeg" class="foto">
+<img src="imagem3.jpeg" class="foto">
+
+</div>
+
+<div class="mensagem">
+Que nosso amor seja sempre leve, verdadeiro e infinito.<br>
+Você é tudo pra mim.
+</div>
+
+<div class="assinatura">
+Com todo meu carinho 💙<br>
+"My Man"
+</div>
+
+<a href="surpresa.html" class="btn">✨ Surpresa ✨</a>
+
+</div>
+
+<script>
+
+/* corações caindo */
+
+function criarCoracao(){
+
+const coracao=document.createElement("div")
+
+coracao.classList.add("coracao")
+
+coracao.innerHTML="💙"
+
+coracao.style.left=Math.random()*100+"vw"
+
+coracao.style.animationDuration=(Math.random()*3+3)+"s"
+
+document.body.appendChild(coracao)
+
+setTimeout(()=>{
+coracao.remove()
+},6000)
+
+}
+
+setInterval(criarCoracao,500)
+
+</script>
+
+</body>
+</html>
