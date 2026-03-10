@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#5fa8ff,#2b6cff);
+font-family:Segoe UI, sans-serif;
+overflow:hidden;
+text-align:center;
+padding:20px;
+}
+
+/* texto principal */
+
+#texto{
+font-size:50px;
+font-weight:bold;
+color:white;
+}
+
+/* batimento */
+
+.bater{
+
+animation:bater 1.3s infinite;
+
+}
+
+@keyframes bater{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.15)}
+100%{transform:scale(1)}
+
+}
+
+/* frase final */
+
+#frase{
+margin-top:20px;
+font-size:20px;
+color:white;
+opacity:0;
+transition:1s;
+}
+
+/* corações */
+
+.coracao{
+position:fixed;
+top:-10px;
+font-size:22px;
+animation:cair linear infinite;
+}
+
+@keyframes cair{
+to{
+transform:translateY(110vh);
+}
+}
+
+/* mobile */
+
+@media(max-width:500px){
+
+#texto{
+font-size:36px;
+}
+
+#frase{
+font-size:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="texto"></div>
+
+<div id="frase">
+Você é a melhor parte da minha vida 💙
+</div>
+
+<script>
+
+/* efeito digitação */
+
+const nome="Gabi"
+let i=0
+
+function digitar(){
+
+if(i<nome.length){
+
+document.getElementById("texto").innerHTML+=nome.charAt(i)
+
+i++
+
+setTimeout(digitar,300)
+
+}else{
+
+setTimeout(mudarTexto,1200)
+
+}
+
+}
+
+digitar()
+
+/* muda para eu te amo */
+
+function mudarTexto(){
+
+const texto=document.getElementById("texto")
+
+texto.innerHTML="EU TE AMO 💙"
+
+texto.classList.add("bater")
+
+document.getElementById("frase").style.opacity=1
+
+}
+
+/* corações caindo */
+
+function criarCoracao(){
+
+const coracao=document.createElement("div")
+
+coracao.classList.add("coracao")
+
+coracao.innerHTML="💙"
+
+coracao.style.left=Math.random()*100+"vw"
+
+coracao.style.animationDuration=(Math.random()*3+3)+"s"
+
+document.body.appendChild(coracao)
+
+setTimeout(()=>{
+coracao.remove()
+},6000)
+
+}
+
+setInterval(criarCoracao,400)
+
+</script>
+
+</body>
+</html>
